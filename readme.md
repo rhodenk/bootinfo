@@ -1,4 +1,4 @@
-#bootinfo sent to pushover client (pushover account needed)
+# bootinfo sent to pushover client (pushover account needed)
 
 clone the repo into `/home/pi` path
 
@@ -14,8 +14,8 @@ sudo systemctl enable Garage2.service
 sudo systemctl daemon-reexec
 ```
 
-create pushover creds file:
-```pushover.json
+create pushover creds file `pushover.json`:
+```
 {
     "token": "your_token",
     "user": "your_user"
