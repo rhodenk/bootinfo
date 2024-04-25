@@ -23,7 +23,7 @@ cp bootinfo.service /lib/systemd/system/bootinfo.service
 enable the service
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable Garage2.service
+sudo systemctl enable bootinfo.service
 sudo systemctl daemon-reexec
 ```
 
