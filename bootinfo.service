@@ -1,0 +1,13 @@
+[Unit]
+Description=Boot Info
+After=multi-user.target
+
+[Service]
+Type=idle
+WorkingDirectory=/home/pi/bootinfo/app/
+ExecStart=/usr/bin/python3 /home/pi/bootinfo/app/main.py
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
