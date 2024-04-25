@@ -4,8 +4,8 @@ After=multi-user.target
 
 [Service]
 Type=idle
-WorkingDirectory=/home/pi/bootinfo/app/
-ExecStart=/usr/bin/python3 /home/pi/bootinfo/app/main.py
+WorkingDirectory=/home/pi/bootinfo/
+ExecStart=/usr/bin/python3 /home/pi/bootinfo/main.py
 User=pi
 Group=pi
 
