@@ -3,6 +3,7 @@ Description=Boot Info
 After=multi-user.target
 
 [Service]
+ExecStartPre=/bin/sleep 30
 Type=idle
 WorkingDirectory=/home/pi/bootinfo/
 ExecStart=/usr/bin/python3 /home/pi/bootinfo/main.py
