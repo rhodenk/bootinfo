@@ -46,3 +46,4 @@ add/update custom message `custommessage.txt`.  This should be in plaintext form
 
 ## other stuff
 consider updating `/etc/motd` for terminal welcome message to explain purpose of device
+don't forget to do an `apt update \\ apt upgrade` 
