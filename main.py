@@ -4,7 +4,7 @@ import json
 import urllib, http.client
 import netifaces
 import time
-import publicIP
+import requests
 
 def pushover(pushoverSettings, msg, sound="gamelan"):
     conn = http.client.HTTPSConnection("api.pushover.net:443")
@@ -27,11 +27,24 @@ def privateIPs():
 
         addresses = netifaces.ifaddresses(interface)
         if 2 in addresses:
-            ips += str(addresses[2]) + "\n"
+            a = addresses[2][0]
+            ips += (f"- IP : {a['addr']}") + "\n"
+            ips += (f"- SN : {a['netmask']}") + "\n"
+            ips += (f"- GW : {a['broadcast']}") + "\n"
 
     return ips
 
 
+def getPublicIP():
+  """Retrieves the public IP address using ip4only.me."""
+  try:
+    response = requests.get("https://ip4only.me/api/")
+    response.raise_for_status()  # Raise an exception for bad status codes
+    s = response.text.strip().split(",")[1]
+    return s
+  except requests.exceptions.RequestException as e:
+    print( f"Error retrieving IP: {e}")
+    return "Unavailable"
 
 ############
 
@@ -46,8 +59,8 @@ if exists("./pushover.json"):
         print("pushover credentials loaded")
 
         msg = "DEVICE BOOT" + "\n\n"
-        msg += f"Hostname: {os.uname()[1]}\n\n"
-        msg += f"Public IP: {publicIP.get()}\n\n"
+        msg += f"Hostname: {os.uname()[1]}\n"
+        msg += f"Public IP: {getPublicIP()}\n"
         msg += f"Private IP(s):\n{ privateIPs() }\n"
 
         if exists("./custommessage.txt"):
