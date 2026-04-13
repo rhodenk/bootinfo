@@ -41,4 +41,4 @@ create pushover creds file `pushover.json`:
 ```
 
 ## custom message
-add/update custom message `custommessage.txt`.  This should be in plaintext format and use `\n` for new-line
+add/update custom message `custommessage.txt`.  This should be in plaintext format.  Newlines are recognised without needing `\n`
