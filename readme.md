@@ -42,3 +42,7 @@ create pushover creds file `pushover.json`:
 
 ## custom message
 add/update custom message `custommessage.txt`.  This should be in plaintext format.  Newlines are recognised without needing `\n`
+
+
+## other stuff
+consider updating `/etc/motd` for terminal welcome message to explain purpose of device
