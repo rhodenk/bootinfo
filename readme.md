@@ -27,8 +27,11 @@ sudo systemctl enable bootinfo.service
 sudo systemctl daemon-reexec
 ```
 
-## Pushover creds
+## bootinfo.service
+If you're not using the "pi" user, update the paths to reflect your chosen path
 
+
+## Pushover creds
 create pushover creds file `pushover.json`:
 ```
 {
@@ -38,5 +41,4 @@ create pushover creds file `pushover.json`:
 ```
 
 ## custom message
-
-update custom message `custommessage.txt`
+add/update custom message `custommessage.txt`.  This should be in plaintext format and use `\n` for new-line
